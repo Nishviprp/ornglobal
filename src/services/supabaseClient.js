@@ -1,15 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const SUPABASE_URL = 'https://vrcnhvpvygkjlfrdiffy.supabase.co'
+const SUPABASE_ANON_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZyY25odnB2eWdramxmcmRpZml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0NDg2MzUsImV4cCI6MjEwMTAyNDYzNX0.PDnzVx38nnJzyWlss3HsW0E2Tx4-9xSORVdksB7MvAg'
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    'Missing Supabase environment variables. Check your .env.local file.'
-  )
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
