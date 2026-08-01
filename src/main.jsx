@@ -7,7 +7,7 @@ import { AuthProvider } from './hooks/useAuth'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ornglobal">
       <AuthProvider>
         <App />
       </AuthProvider>
