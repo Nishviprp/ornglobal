@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+# dist (temporarily excluded for GitHub Pages deployment)
 dist-ssr
 *.local
 
