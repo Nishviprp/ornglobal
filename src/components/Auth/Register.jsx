@@ -22,7 +22,16 @@ export default function Register() {
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
-    listHospitals().then(setHospitals).catch(() => setHospitals([]))
+    async function fetchHospitals() {
+      try {
+        const data = await listHospitals()
+        setHospitals(data)
+      } catch (err) {
+        console.error('Failed to load hospitals:', err)
+        setHospitals([])
+      }
+    }
+    fetchHospitals()
   }, [])
 
   async function handleAddHospital() {
